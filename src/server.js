@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "../.env" });
+require("dotenv").config({ path: ".env" });
 
 // requires
 const express = require("express");
@@ -18,4 +18,6 @@ app.use(cors());
 app.use(routes);
 
 // starting port
-app.listen(appConfig.port);
+app.listen(appConfig.port, () => {
+  console.log(`App listening on port ${appConfig.port}`);
+});
