@@ -14,6 +14,7 @@ class Movie extends Model {
         dislikes: DataTypes.INTEGER,
         image: DataTypes.STRING,
         banner: DataTypes.STRING,
+        parental: DataTypes.INTEGER,
       },
       { sequelize }
     );

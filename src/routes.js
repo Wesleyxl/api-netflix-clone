@@ -24,14 +24,15 @@ router.get("/categories", auth, CategoryController.index);
 router.get("/category/:category_id", auth, CategoryController.show);
 router.post("/category", auth, CategoryController.store);
 router.put("/category/:category_id", auth, CategoryController.update);
-router.delete("/category/:category_id", auth, CategoryController.destroy);
+router.delete("/category/:category_id", auth, CategoryController.delete);
 
 // movies routes
 router.get("/movies", auth, MovieController.index);
+router.get("/movies/banner", MovieController.banner);
 router.get("/movie/:movie_id", auth, MovieController.show);
 router.post("/movie", auth, MovieController.store);
 router.put("/movie/:movie_id", auth, MovieController.update);
-router.delete("/movie/:movie_id", auth, MovieController.destroy);
+router.delete("/movie/:movie_id", auth, MovieController.delete);
 
 // users routes
 router.get("/users", auth, UserController.index);

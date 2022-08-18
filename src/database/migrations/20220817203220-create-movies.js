@@ -37,6 +37,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      parental: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       likes: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
@@ -52,6 +56,14 @@ module.exports = {
       banner: {
         type: Sequelize.STRING,
         allowNull: true,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
       },
     });
   },

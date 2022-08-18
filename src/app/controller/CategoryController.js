@@ -9,7 +9,7 @@ module.exports = {
       return res.status(400).json({ error: "Nenhuma categoria cadastrada" });
     }
 
-    res.json(categories);
+    return res.json(categories);
   },
 
   // show specifics category
@@ -69,7 +69,7 @@ module.exports = {
   },
 
   // delete category
-  async destroy(req, res) {
+  async delete(req, res) {
     const { category_id } = req.params;
 
     const category = await Category.findByPk(category_id);
@@ -81,7 +81,7 @@ module.exports = {
     }
 
     try {
-      await Category.delete({ where: { id: category_id } });
+      await Category.destroy({ where: { id: category_id } });
       return res.status(200).json({ success: true });
     } catch (error) {
       return res.status(400).json({ error: "Erro ao delete a categoria" });
